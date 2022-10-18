@@ -1,13 +1,13 @@
 pipeline {
-    agent {label 'GRADLE && MVN3 && NVM && PY3'} 
+    agent {label 'JDK11 && MVN3 && NVM && PY3'} 
     stages {
         stage('clone') { 
             steps {
-                git url:'https://github.com/Kalyanand-299/shopizer.git' , branch : 'master' 
+                git url:'https://github.com/Kalyanand-299/shopizer.git' , branch : 'develop' 
             }
         }
         stage('install') { 
-            steps {
+
                 sh 'mvn package'
             }
         }
