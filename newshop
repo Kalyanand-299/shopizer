@@ -6,9 +6,11 @@ pipeline {
                 git url:'https://github.com/Kalyanand-299/shopizer.git' , branch : 'develop' 
             }
         }
-        stage('install') { 
+        stage('install') {
+            steps { 
 
                 sh 'mvn package'
             }
         }
     }
+}
